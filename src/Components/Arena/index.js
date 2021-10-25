@@ -13,7 +13,9 @@ const Arena = ({ characterNFT , setCharacterNFT }) => {
   const [gameContract, setGameContract] = useState(null);
   const [boss, setBoss] = useState(null);
   const [attackState, setAttackState] = useState('')
-  const [showToast, setShowToast] = useState(false);
+  const [showToast, setShowToast] = useState('');
+  const toast_hide = showToast ? "show" : "hide";
+
 
   const runAttackAction = async () => {
     try {
@@ -106,7 +108,7 @@ const Arena = ({ characterNFT , setCharacterNFT }) => {
    
     {/* Toast Ui */}
     {boss && (
-      <div id="toast" className="show">
+      <div id="toast" className={toast_hide}>
         <div id="desc">{`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}</div>
       </div>
     )}
@@ -116,7 +118,7 @@ const Arena = ({ characterNFT , setCharacterNFT }) => {
         <div className={`boss-content ${attackState}`}>
           <h2>🔥 {boss.name} 🔥</h2>
           <div className="image-content">
-            <img src={boss.imageURI} alt={`Boss ${boss.name}`} />
+            <img src= {`https://cloudflare-ipfs.com/ipfs/${boss.imageURI}`} alt={`Boss ${boss.name}`} />
             <div className="health-bar">
               <progress value={boss.hp} max={boss.maxHp} />
               <p>{`${boss.hp} / ${boss.maxHp} HP`}</p>
@@ -147,7 +149,7 @@ const Arena = ({ characterNFT , setCharacterNFT }) => {
             <div className="image-content">
               <h2>{characterNFT.name}</h2>
               <img
-                src={characterNFT.imageURI}
+                src={`https://cloudflare-ipfs.com/ipfs/${characterNFT.imageURI}`}
                 alt={`Character ${characterNFT.name}`}
               />
               <div className="health-bar">
