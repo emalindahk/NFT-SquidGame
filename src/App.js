@@ -62,7 +62,7 @@ const App = () => {
       return (
         <div className="connect-wallet-container">
         <img
-          src={`https://cloudflare-ipfs.com/ipfs/QmaPqsJTxXX4q6BnULQcc4sdjT3XMY5PjDR3vYoi5Bp2Li}`}
+          src={`https://cloudflare-ipfs.com/ipfs/QmaPqsJTxXX4q6BnULQcc4sdjT3XMY5PjDR3vYoi5Bp2Li`}
           alt="Squid Game  Gif"
         />
 
